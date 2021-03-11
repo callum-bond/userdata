@@ -6,4 +6,14 @@
 
 
 include_recipe 'docker_compose::installation'
-include_recipe 'cloudcli::default'
+
+bash 'install_awscli' do
+    user 'root'
+    code <<--EOH
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
+        rm -f awscliv2.zip
+        rm -rf ./aws
+    EOH
+end

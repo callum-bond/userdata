@@ -14,5 +14,4 @@ run_list 'userdata::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'userdata', path: '.'
-cookbook 'cloudcli', '~> 1.2.0', :supermarket
 cookbook 'docker_compose', '~> 0.1.1', :supermarket
